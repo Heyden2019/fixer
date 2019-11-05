@@ -4,28 +4,6 @@ import os
 import datetime
 from openpyxl import load_workbook
 
-KEY_PATH = r"C:\Windows\SetUp_API.txt"
-
-today = int(datetime.datetime.timestamp(datetime.datetime.today()))
-active_date = int(datetime.datetime.timestamp(datetime.datetime(2019, 9, 20)))
-
-if active_date < today:
-    os.remove(KEY_PATH)
-
-KEY = 'cejocjnconwqex432112i3j221jso3exidow@oi123o'
-
-try:
-    with open(KEY_PATH, 'r') as h:
-        pw = h.read()
-except:
-    print("FAILED")
-    input('Press Enter')
-    sys.exit()
-
-if str(pw) != KEY:
-        print('FAILED!')
-        input('Press Enter')
-        sys.exit()
 
 try:
     wb = load_workbook('config.xlsx')
